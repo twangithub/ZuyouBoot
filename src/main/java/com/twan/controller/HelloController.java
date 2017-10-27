@@ -18,7 +18,7 @@ public class HelloController {
     //简写为一下的注解,还有PostMapping等
     @GetMapping(value = "/say")
     public String say(){
-        return "Hello";
+        return "Hello success";
     }
 
     // get,post都能访问, 不推荐
