@@ -1,5 +1,7 @@
 package com.twan.controller;
 
+import com.google.gson.Gson;
+import com.twan.entity.Result;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -18,7 +20,14 @@ public class HelloController {
     //简写为一下的注解,还有PostMapping等
     @GetMapping(value = "/say")
     public String say(){
-        return "Hello success";
+        Result<String> result = new Result<>();
+        result.setCode(200);
+        result.setCount(2);
+        result.setData("data");
+        result.setMsg("msg");
+        result.setPage(1);
+        //return "Hello success";
+        return new Gson().toJson(result);
     }
 
     // get,post都能访问, 不推荐

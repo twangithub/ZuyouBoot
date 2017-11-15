@@ -19,4 +19,6 @@ public interface Dao {
 
     public int delStudentById(long id);
 
+    public List<?> findAllRooms();
+
 }

@@ -18,4 +18,7 @@ public interface BaseService {
     public Result updateStudent(Student student);
     
     public Result delStudentById(String id);
+
+
+    public Result findAllRooms();
 }

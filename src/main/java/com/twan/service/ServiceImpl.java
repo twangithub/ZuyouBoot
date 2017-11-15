@@ -26,7 +26,7 @@ public class ServiceImpl implements BaseService {
         Result result = new Result();
         try {
             int res = dao.addStudent(student);
-            result.setStatus(res);
+            result.setCount(res);
         } catch (Exception e) {
             logger.log(Level.SEVERE, null, e);
         }
@@ -38,7 +38,7 @@ public class ServiceImpl implements BaseService {
         Result result = new Result();
         try {
             List<?> students = dao.findAllStudent();
-            result.setStatus(1);
+            result.setCount(1);
             result.setData(students);
         } catch (Exception e) {
             logger.log(Level.SEVERE, null, e);
@@ -51,7 +51,7 @@ public class ServiceImpl implements BaseService {
         Result result = new Result();
         try {
             int res = dao.updateStudent(student);
-            result.setStatus(res);
+            result.setCount(res);
         } catch (Exception e) {
             logger.log(Level.SEVERE, null, e);
         }
@@ -63,7 +63,20 @@ public class ServiceImpl implements BaseService {
         Result result = new Result();
         try {
             int res = dao.delStudentById(Long.parseLong(id));
-            result.setStatus(res);
+            result.setCount(res);
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, null, e);
+        }
+        return result;
+    }
+
+    ////////////////////////// demo end ////////////////////
+    @Override
+    public Result findAllRooms() {
+        Result result = new Result();
+        try {
+            List<?> res = dao.findAllRooms();
+            result.setData(res);
         } catch (Exception e) {
             logger.log(Level.SEVERE, null, e);
         }

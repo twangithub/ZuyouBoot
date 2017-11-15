@@ -1,4 +1,5 @@
-# http://127.0.0.1:8081/test/hello/say
+# 产品发布的版本,开发请忽略
+# http://127.0.0.1:3355/test/hello/say
 server:
-  port: 8081
+  port: 3355
   context-path: /test

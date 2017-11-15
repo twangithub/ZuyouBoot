@@ -1,5 +1,6 @@
 package com.twan.dao;
 
+import com.twan.entity.Room;
 import com.twan.entity.Student;
 import com.twan.util.JDBCUtils;
 import java.sql.Connection;
@@ -78,5 +79,19 @@ public class JDBCDao implements Dao {
             logger.log(Level.SEVERE, null, ex);
         }
         return res;
+    }
+
+    @Override
+    public List<?> findAllRooms() {
+        List<?> students = null;
+        String sql = "SELECT * FROM zyroom";
+        try {
+            PreparedStatement pre = conn.prepareStatement(sql);
+            ResultSet rs = pre.executeQuery();
+            students = JDBCUtils.TranverseToList(rs, Room.class);
+        } catch (Exception ex) {
+            logger.log(Level.SEVERE, null, ex);
+        }
+        return students;
     }
 }

@@ -1,4 +1,5 @@
-# http://127.0.0.1:8181/test/hello/say
+# 开发者使用此配置
+# http://127.0.0.1:8181/zy/hello/say
 server:
   port: 8181
-  context-path: /test
+  context-path: /zy

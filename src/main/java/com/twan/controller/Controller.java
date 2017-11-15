@@ -14,12 +14,13 @@ import com.twan.service.BaseService;
  * @date 2017-8-8 17:53:21
  */
 @RestController
-@RequestMapping("/student")
+@RequestMapping("/room")
 public class Controller {
 
     @Resource
     private BaseService service;
 
+    //////////////////// demo start //////////////
     /**
      * 新增
      *
@@ -68,4 +69,11 @@ public class Controller {
     public String testCanRun() {
         return "congratulations! success!";
     }
+
+    //////////////////// demo end //////////////
+    @GetMapping("/findAllRooms")
+    public Result findAllRooms() {
+        return service.findAllRooms();
+    }
+
 }
