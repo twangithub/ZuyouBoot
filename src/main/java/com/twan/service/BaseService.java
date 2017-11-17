@@ -21,4 +21,7 @@ public interface BaseService {
 
 
     public Result findAllRooms();
+    public Result findAllTechs();
+    public Result findAllProjs();
+    public Result findAllGoods();
 }

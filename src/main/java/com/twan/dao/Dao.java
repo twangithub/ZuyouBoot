@@ -1,6 +1,7 @@
 package com.twan.dao;
 
 import com.twan.entity.Student;
+
 import java.util.List;
 
 /**
@@ -20,5 +21,8 @@ public interface Dao {
     public int delStudentById(long id);
 
     public List<?> findAllRooms();
+    public List<?> findAllTechs();
+    public List<?> findAllProjs();
+    public List<?> findAllGoods();
 
 }

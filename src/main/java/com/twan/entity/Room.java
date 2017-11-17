@@ -7,24 +7,13 @@ import java.sql.Timestamp;
  * Created by twan on 2017/11/9.
  */
 
-public class Room implements Serializable {
-    private int id;
+public class Room extends Entity {
     private int roomid;//
     private String roomname;//房间名称
     private String rtype;//房间类别
     private int bedcnt;//床位
     private int istimer;//是否计时
 
-    private Timestamp logtime;
-    private Timestamp createtime;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public int getRoomid() {
         return roomid;
@@ -64,22 +53,6 @@ public class Room implements Serializable {
 
     public void setIstimer(int istimer) {
         this.istimer = istimer;
-    }
-
-    public Timestamp getLogtime() {
-        return logtime;
-    }
-
-    public void setLogtime(Timestamp logtime) {
-        this.logtime = logtime;
-    }
-
-    public Timestamp getCreatetime() {
-        return createtime;
-    }
-
-    public void setCreatetime(Timestamp createtime) {
-        this.createtime = createtime;
     }
 
     @Override

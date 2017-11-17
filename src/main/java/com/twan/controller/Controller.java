@@ -76,4 +76,19 @@ public class Controller {
         return service.findAllRooms();
     }
 
+    @GetMapping("/findAllTechs")
+    public Result findAllTechs() {
+        return service.findAllTechs();
+    }
+
+    @GetMapping("/findAllProjs")
+    public Result findAllProjs() {
+        return service.findAllProjs();
+    }
+
+    @GetMapping("/findAllGoods")
+    public Result findAllGoods() {
+        return service.findAllGoods();
+    }
+
 }

@@ -82,4 +82,40 @@ public class ServiceImpl implements BaseService {
         }
         return result;
     }
+
+    @Override
+    public Result findAllTechs() {
+        Result result = new Result();
+        try {
+            List<?> res = dao.findAllTechs();
+            result.setData(res);
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, null, e);
+        }
+        return result;
+    }
+
+    @Override
+    public Result findAllProjs() {
+        Result result = new Result();
+        try {
+            List<?> res = dao.findAllProjs();
+            result.setData(res);
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, null, e);
+        }
+        return result;
+    }
+
+    @Override
+    public Result findAllGoods() {
+        Result result = new Result();
+        try {
+            List<?> res = dao.findAllGoods();
+            result.setData(res);
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, null, e);
+        }
+        return result;
+    }
 }

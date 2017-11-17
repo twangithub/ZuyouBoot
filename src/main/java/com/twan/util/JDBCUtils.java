@@ -81,7 +81,7 @@ public class JDBCUtils {
         ResultSetMetaData rsm = rs.getMetaData();
         int colNumber = rsm.getColumnCount();
         List<Object> list = new ArrayList<>();
-        Field[] fields = clazz.getDeclaredFields();
+        Field[] fields = getWholeFields(clazz);//clazz.getDeclaredFields();
         //遍历每条记录
         while (rs.next()) {
             //实例化对象
@@ -103,5 +103,28 @@ public class JDBCUtils {
             list.add(obj);
         }
         return list;
+    }
+
+    /**
+     * 获取所以的类变量，包括该类的父类的类变量
+     * @param clazz
+     * @return
+     */
+    public static Field[] getWholeFields(Class<?> clazz){
+        Field[] result=clazz.getDeclaredFields();
+        Class<?> superClass=clazz.getSuperclass();
+        while(superClass!=null){
+            Field[] tempField=superClass.getDeclaredFields();
+            Field[] tempResult=new Field[result.length+tempField.length];
+            for(int i=0;i<result.length;i++){
+                tempResult[i]=result[i];
+            }
+            for(int i=0;i<tempField.length;i++){
+                tempResult[result.length+i]=tempField[i];
+            }
+            result=tempResult;
+            superClass=superClass.getSuperclass();
+        }
+        return result;
     }
 }
